@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "policy_version": "phase3-decision-policy-v1",
+  "status": "provisional",
+  "dataset_version": "phase3-labelled-url-calibration-v1",
+  "generated_at": "2026-08-13T17:22:07.029505Z",
+  "risk_score_source": "url.vet result.risk_score",
+  "judgement_score_source": "local LR phishing probability",
+  "thresholds": {
+    "low_medium": 62.0,
+    "medium_high": 79.0,
+    "high_dangerous": 100.0
+  },
+  "suspicious_benchmark": 79.0,
+  "agreement_margin": 1.0,
+  "verdict_floors": {
+    "suspicious": "High suspicion",
+    "risky": "Dangerous",
+    "malicious": "Dangerous"
+  },
+  "selection_priority": "minimise_false_negatives_then_maximise_recall_then_minimise_false_positives",
+  "metrics": {
+    "sample_count": 40,
+    "presumed_benign_count": 20,
+    "suspicious_count": 20,
+    "completed_count": 34,
+    "incomplete_count": 6,
+    "confusion_matrix": {
+      "true_positive": 20,
+      "true_negative": 10,
+      "false_positive": 4,
+      "false_negative": 0
+    },
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "false_negative_rate": 0.0,
+    "false_positive_rate": 0.2857142857142857
+  },
+  "limitations": [
+    "Tranco popularity is a presumed-benign proxy, not proof that every sampled destination is safe.",
+    "PhishTank online status and url.vet evidence are time-sensitive retrieval snapshots.",
+    "The retained local LR model has no committed training-source manifest, so overlap with this calibration sample cannot be excluded.",
+    "url.vet includes a PhishTank threat-intelligence check, so PhishTank-labelled calibration is not an independent external validation of url.vet.",
+    "Binary labels support the suspicious benchmark directly; the four display levels are provisional operational bands derived from presumed-benign Q3, benchmark B, and suspicious Q1 rather than four independently labelled ground-truth classes.",
+    "The 60-record bounded sample is below the 200-record approval target.",
+    "Some url.vet analyses were partial or unavailable; usable numeric scores are retained, but full network-backed completion is reported separately.",
+    "The validation false-positive rate is 71.4% across 7 completed presumed-benign records; the safety-first policy over-warns and requires more representative calibration before approval."
+  ]
+}

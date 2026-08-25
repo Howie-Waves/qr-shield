@@ -1,0 +1,518 @@
+{
+  "dataset": "QR Shield E3-US1 locked local evidence scenarios",
+  "dataset_version": "1.1",
+  "scenario_count": 6,
+  "passed_scenarios": 6,
+  "scenario_effectiveness": [
+    {
+      "id": "normal_url",
+      "expected_outcome": "Risk assessed",
+      "actual_outcome": "Risk assessed",
+      "passed": true,
+      "analysis_status": "Complete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "Low suspicion",
+        "conclusion": "Not suspicious",
+        "confidence_level": "Medium",
+        "confidence_reason": "Both scores make the same benchmark decision, but the score difference exceeds the agreement margin.",
+        "decision_reasons": [
+          "url.vet risk score 5 stayed below B=79.",
+          "Local judgement score 3.11 stayed below B=79.",
+          "The more cautious score-derived level is Low suspicion."
+        ],
+        "risk_score_level": "Low suspicion",
+        "judgement_score_level": "Low suspicion",
+        "risk_vote_suspicious": false,
+        "judgement_vote_suspicious": false,
+        "adverse_verdict": null
+      },
+      "failed_check_ids": [],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "local_denylist": "local-denylist-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "URL_VET_VERDICT_SAFE"
+      ],
+      "latency_ms": 853.437
+    },
+    {
+      "id": "suspicious_lexical_url",
+      "expected_outcome": "Review required",
+      "actual_outcome": "Review required",
+      "passed": true,
+      "analysis_status": "Complete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "Dangerous",
+        "conclusion": "Suspicious",
+        "confidence_level": "Medium",
+        "confidence_reason": "Both scores make the same benchmark decision, but at least one score is close to the benchmark and the score difference exceeds the agreement margin.",
+        "decision_reasons": [
+          "url.vet risk score 80 reached B=79.",
+          "Local judgement score 100 reached B=79.",
+          "The more cautious score-derived level is Dangerous.",
+          "url.vet verdict Suspicious sets a minimum level of High suspicion."
+        ],
+        "risk_score_level": "High suspicion",
+        "judgement_score_level": "Dangerous",
+        "risk_vote_suspicious": true,
+        "judgement_vote_suspicious": true,
+        "adverse_verdict": "Suspicious"
+      },
+      "failed_check_ids": [],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "local_denylist": "local-denylist-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "URL_VET_VERDICT_SUSPICIOUS"
+      ],
+      "latency_ms": 366.228
+    },
+    {
+      "id": "denylist_match",
+      "expected_outcome": "Review required",
+      "actual_outcome": "Review required",
+      "passed": true,
+      "analysis_status": "Complete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "High suspicion",
+        "conclusion": "Suspicious",
+        "confidence_level": "Medium",
+        "confidence_reason": "Both scores make the same benchmark decision, but at least one score is close to the benchmark and the score difference exceeds the agreement margin.",
+        "decision_reasons": [
+          "url.vet risk score 80 reached B=79.",
+          "Local judgement score 90.97 reached B=79.",
+          "The more cautious score-derived level is High suspicion.",
+          "url.vet verdict Suspicious sets a minimum level of High suspicion."
+        ],
+        "risk_score_level": "High suspicion",
+        "judgement_score_level": "High suspicion",
+        "risk_vote_suspicious": true,
+        "judgement_vote_suspicious": true,
+        "adverse_verdict": "Suspicious"
+      },
+      "failed_check_ids": [],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "local_denylist": "locked-test-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "DENYLIST_MATCH",
+        "URL_VET_VERDICT_SUSPICIOUS"
+      ],
+      "latency_ms": 346.909
+    },
+    {
+      "id": "denylist_unavailable",
+      "expected_outcome": "Incomplete",
+      "actual_outcome": "Incomplete",
+      "passed": true,
+      "analysis_status": "Incomplete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "Low suspicion",
+        "conclusion": "Not suspicious",
+        "confidence_level": "Medium",
+        "confidence_reason": "Both scores make the same benchmark decision, but the score difference exceeds the agreement margin.",
+        "decision_reasons": [
+          "url.vet risk score 5 stayed below B=79.",
+          "Local judgement score 61.18 stayed below B=79.",
+          "The more cautious score-derived level is Low suspicion."
+        ],
+        "risk_score_level": "Low suspicion",
+        "judgement_score_level": "Low suspicion",
+        "risk_vote_suspicious": false,
+        "judgement_vote_suspicious": false,
+        "adverse_verdict": null
+      },
+      "failed_check_ids": [
+        "local_denylist"
+      ],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "DENYLIST_UNAVAILABLE",
+        "URL_VET_VERDICT_SAFE"
+      ],
+      "latency_ms": 353.293
+    },
+    {
+      "id": "model_unavailable",
+      "expected_outcome": "Incomplete",
+      "actual_outcome": "Incomplete",
+      "passed": true,
+      "analysis_status": "Incomplete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": null,
+        "conclusion": "Incomplete",
+        "confidence_level": "Unavailable",
+        "confidence_reason": "url.vet risk score is unavailable, so no final suspicion level was assigned.",
+        "decision_reasons": [
+          "Both score sources are mandatory for a completed Phase 3 URL decision."
+        ],
+        "risk_score_level": null,
+        "judgement_score_level": "Medium suspicion",
+        "risk_vote_suspicious": null,
+        "judgement_vote_suspicious": false,
+        "adverse_verdict": null
+      },
+      "failed_check_ids": [
+        "url_vet"
+      ],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "local_denylist": "local-denylist-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "URL_VET_UNAVAILABLE"
+      ],
+      "latency_ms": 391.094
+    },
+    {
+      "id": "payment_mismatch",
+      "expected_outcome": "Review required",
+      "actual_outcome": "Review required",
+      "passed": true,
+      "analysis_status": "Not scored",
+      "decision": {
+        "policy_version": null,
+        "policy_status": null,
+        "benchmark": null,
+        "agreement_margin": null,
+        "thresholds": null,
+        "suspicion_level": null,
+        "conclusion": "Not applicable",
+        "confidence_level": "Unavailable",
+        "confidence_reason": "url.vet does not apply to payment QR content.",
+        "decision_reasons": [],
+        "risk_score_level": null,
+        "judgement_score_level": null,
+        "risk_vote_suspicious": null,
+        "judgement_vote_suspicious": null,
+        "adverse_verdict": null
+      },
+      "failed_check_ids": [],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "payment": "payment-reference-v1"
+      },
+      "principal_signals": [
+        "AMOUNT_MISMATCH"
+      ],
+      "latency_ms": 521.893
+    }
+  ],
+  "calibration": {
+    "bins": [
+      {
+        "score_range": "0-39",
+        "count": 2,
+        "mean_score": 5.0,
+        "observed_positive_rate": 0.0
+      },
+      {
+        "score_range": "40-69",
+        "count": 0,
+        "mean_score": null,
+        "observed_positive_rate": null
+      },
+      {
+        "score_range": "70-100",
+        "count": 2,
+        "mean_score": 80.0,
+        "observed_positive_rate": 1.0
+      }
+    ],
+    "method": "locked-scenario score bins"
+  },
+  "latency_ms": {
+    "p50": 366.228,
+    "p95": 853.437
+  },
+  "failure_behaviour": [
+    {
+      "id": "suspicious_lexical_url",
+      "expected_outcome": "Review required",
+      "actual_outcome": "Review required",
+      "passed": true,
+      "analysis_status": "Complete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "Dangerous",
+        "conclusion": "Suspicious",
+        "confidence_level": "Medium",
+        "confidence_reason": "Both scores make the same benchmark decision, but at least one score is close to the benchmark and the score difference exceeds the agreement margin.",
+        "decision_reasons": [
+          "url.vet risk score 80 reached B=79.",
+          "Local judgement score 100 reached B=79.",
+          "The more cautious score-derived level is Dangerous.",
+          "url.vet verdict Suspicious sets a minimum level of High suspicion."
+        ],
+        "risk_score_level": "High suspicion",
+        "judgement_score_level": "Dangerous",
+        "risk_vote_suspicious": true,
+        "judgement_vote_suspicious": true,
+        "adverse_verdict": "Suspicious"
+      },
+      "failed_check_ids": [],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "local_denylist": "local-denylist-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "URL_VET_VERDICT_SUSPICIOUS"
+      ],
+      "latency_ms": 366.228
+    },
+    {
+      "id": "denylist_match",
+      "expected_outcome": "Review required",
+      "actual_outcome": "Review required",
+      "passed": true,
+      "analysis_status": "Complete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "High suspicion",
+        "conclusion": "Suspicious",
+        "confidence_level": "Medium",
+        "confidence_reason": "Both scores make the same benchmark decision, but at least one score is close to the benchmark and the score difference exceeds the agreement margin.",
+        "decision_reasons": [
+          "url.vet risk score 80 reached B=79.",
+          "Local judgement score 90.97 reached B=79.",
+          "The more cautious score-derived level is High suspicion.",
+          "url.vet verdict Suspicious sets a minimum level of High suspicion."
+        ],
+        "risk_score_level": "High suspicion",
+        "judgement_score_level": "High suspicion",
+        "risk_vote_suspicious": true,
+        "judgement_vote_suspicious": true,
+        "adverse_verdict": "Suspicious"
+      },
+      "failed_check_ids": [],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "local_denylist": "locked-test-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "DENYLIST_MATCH",
+        "URL_VET_VERDICT_SUSPICIOUS"
+      ],
+      "latency_ms": 346.909
+    },
+    {
+      "id": "denylist_unavailable",
+      "expected_outcome": "Incomplete",
+      "actual_outcome": "Incomplete",
+      "passed": true,
+      "analysis_status": "Incomplete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "Low suspicion",
+        "conclusion": "Not suspicious",
+        "confidence_level": "Medium",
+        "confidence_reason": "Both scores make the same benchmark decision, but the score difference exceeds the agreement margin.",
+        "decision_reasons": [
+          "url.vet risk score 5 stayed below B=79.",
+          "Local judgement score 61.18 stayed below B=79.",
+          "The more cautious score-derived level is Low suspicion."
+        ],
+        "risk_score_level": "Low suspicion",
+        "judgement_score_level": "Low suspicion",
+        "risk_vote_suspicious": false,
+        "judgement_vote_suspicious": false,
+        "adverse_verdict": null
+      },
+      "failed_check_ids": [
+        "local_denylist"
+      ],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "DENYLIST_UNAVAILABLE",
+        "URL_VET_VERDICT_SAFE"
+      ],
+      "latency_ms": 353.293
+    },
+    {
+      "id": "model_unavailable",
+      "expected_outcome": "Incomplete",
+      "actual_outcome": "Incomplete",
+      "passed": true,
+      "analysis_status": "Incomplete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": null,
+        "conclusion": "Incomplete",
+        "confidence_level": "Unavailable",
+        "confidence_reason": "url.vet risk score is unavailable, so no final suspicion level was assigned.",
+        "decision_reasons": [
+          "Both score sources are mandatory for a completed Phase 3 URL decision."
+        ],
+        "risk_score_level": null,
+        "judgement_score_level": "Medium suspicion",
+        "risk_vote_suspicious": null,
+        "judgement_vote_suspicious": false,
+        "adverse_verdict": null
+      },
+      "failed_check_ids": [
+        "url_vet"
+      ],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "local_denylist": "local-denylist-v1",
+        "url_vet": "locked-urlvet-v1",
+        "local_judgement": "url-risk-lr-2026.07.29",
+        "payment": "payment-reference-v1",
+        "decision_policy": "phase3-decision-policy-v1"
+      },
+      "principal_signals": [
+        "URL_VET_UNAVAILABLE"
+      ],
+      "latency_ms": 391.094
+    },
+    {
+      "id": "payment_mismatch",
+      "expected_outcome": "Review required",
+      "actual_outcome": "Review required",
+      "passed": true,
+      "analysis_status": "Not scored",
+      "decision": {
+        "policy_version": null,
+        "policy_status": null,
+        "benchmark": null,
+        "agreement_margin": null,
+        "thresholds": null,
+        "suspicion_level": null,
+        "conclusion": "Not applicable",
+        "confidence_level": "Unavailable",
+        "confidence_reason": "url.vet does not apply to payment QR content.",
+        "decision_reasons": [],
+        "risk_score_level": null,
+        "judgement_score_level": null,
+        "risk_vote_suspicious": null,
+        "judgement_vote_suspicious": null,
+        "adverse_verdict": null
+      },
+      "failed_check_ids": [],
+      "source_versions": {
+        "block_inspection": "five-region-v1",
+        "payment": "payment-reference-v1"
+      },
+      "principal_signals": [
+        "AMOUNT_MISMATCH"
+      ],
+      "latency_ms": 521.893
+    }
+  ]
+}

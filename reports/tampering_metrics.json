@@ -1,0 +1,15 @@
+{
+  "dataset_version": "1.0",
+  "fixture_count": 13,
+  "thresholds": {
+    "min_black_ratio": 0.05,
+    "max_black_ratio": 0.95
+  },
+  "true_positive": 9,
+  "false_positive": 0,
+  "true_negative": 4,
+  "false_negative": 0,
+  "true_positive_rate": 1.0,
+  "false_negative_rate": 0.0,
+  "false_positive_rate": 0.0
+}

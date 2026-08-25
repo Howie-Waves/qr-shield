@@ -1,0 +1,21 @@
+{
+  "model_name": "LogisticRegression",
+  "sample_count": 20000,
+  "train_count": 16000,
+  "test_count": 4000,
+  "accuracy": 0.9785,
+  "precision": 0.9968847352024922,
+  "recall": 0.96,
+  "f1": 0.97809475292919,
+  "pr_auc": 0.9967258758026483,
+  "confusion_matrix": [
+    [
+      1994,
+      6
+    ],
+    [
+      80,
+      1920
+    ]
+  ]
+}

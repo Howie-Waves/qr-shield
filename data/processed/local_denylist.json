@@ -1,0 +1,9 @@
+{
+  "version": "local-denylist-v1",
+  "entries": [
+    {
+      "hostname_sha256": "b059a83ca9e62200a329f8ce984bc71fab7f2b3236950b2580f8dcc9723da097",
+      "reason_code": "demonstration_listed_domain"
+    }
+  ]
+}

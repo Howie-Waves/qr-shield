@@ -1,0 +1,46 @@
+{
+  "dataset": "QR Shield E3-US1 locked local evidence scenarios",
+  "version": "1.1",
+  "generator": "OpenCV QRCodeEncoder_create, fixed payloads",
+  "records": [
+    {
+      "id": "normal_url",
+      "payload": "https://example.com",
+      "expected_outcome": "Risk assessed",
+      "label": 0
+    },
+    {
+      "id": "suspicious_lexical_url",
+      "payload": "http://192.0.2.1/secure-login?account=verify",
+      "expected_outcome": "Review required",
+      "label": 1
+    },
+    {
+      "id": "denylist_match",
+      "payload": "https://listed.test/login",
+      "expected_outcome": "Review required",
+      "label": 1,
+      "override": "denylist_match"
+    },
+    {
+      "id": "denylist_unavailable",
+      "payload": "https://example.com/again",
+      "expected_outcome": "Incomplete",
+      "label": 0,
+      "override": "denylist_unavailable"
+    },
+    {
+      "id": "model_unavailable",
+      "payload": "https://example.com/model",
+      "expected_outcome": "Incomplete",
+      "label": 0,
+      "override": "model_unavailable"
+    },
+    {
+      "id": "payment_mismatch",
+      "payload": "QRSHIELD-PAY:v1;merchant_id=uni-cafe;payee_id=payee-4821;amount=99.00;currency=AUD",
+      "expected_outcome": "Review required",
+      "label": null
+    }
+  ]
+}

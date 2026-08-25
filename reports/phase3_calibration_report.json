@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "report_version": "phase3-calibration-report-v1",
+  "dataset_version": "phase3-labelled-url-calibration-v1",
+  "generated_at": "2026-08-13T17:22:07.029505Z",
+  "candidate_policy_count": 99,
+  "source_hashes": {
+    "tranco_top_1m": "feab56e5b4f48e3c1393916d74226d1d6234416c621390be29bb72199caf18d7",
+    "phishtank_online_valid": "fff606a56ceb6e292065410965be53206ec2d98ed3b92522a536e82d7b19a3b4"
+  },
+  "analysis_versions": {
+    "url_vet": "urlvet-556c7aa3f5bb",
+    "local_judgement_model": "url-risk-lr-2026.07.29"
+  },
+  "selected_policy": {
+    "schema_version": "1.0",
+    "policy_version": "phase3-decision-policy-v1",
+    "status": "provisional",
+    "dataset_version": "phase3-labelled-url-calibration-v1",
+    "generated_at": "2026-08-13T17:22:07.029505Z",
+    "risk_score_source": "url.vet result.risk_score",
+    "judgement_score_source": "local LR phishing probability",
+    "thresholds": {
+      "low_medium": 62.0,
+      "medium_high": 79.0,
+      "high_dangerous": 100.0
+    },
+    "suspicious_benchmark": 79.0,
+    "agreement_margin": 1.0,
+    "verdict_floors": {
+      "suspicious": "High suspicion",
+      "risky": "Dangerous",
+      "malicious": "Dangerous"
+    },
+    "selection_priority": "minimise_false_negatives_then_maximise_recall_then_minimise_false_positives",
+    "metrics": {
+      "sample_count": 40,
+      "presumed_benign_count": 20,
+      "suspicious_count": 20,
+      "completed_count": 34,
+      "incomplete_count": 6,
+      "confusion_matrix": {
+        "true_positive": 20,
+        "true_negative": 10,
+        "false_positive": 4,
+        "false_negative": 0
+      },
+      "precision": 0.8333333333333334,
+      "recall": 1.0,
+      "false_negative_rate": 0.0,
+      "false_positive_rate": 0.2857142857142857
+    },
+    "limitations": [
+      "Tranco popularity is a presumed-benign proxy, not proof that every sampled destination is safe.",
+      "PhishTank online status and url.vet evidence are time-sensitive retrieval snapshots.",
+      "The retained local LR model has no committed training-source manifest, so overlap with this calibration sample cannot be excluded.",
+      "url.vet includes a PhishTank threat-intelligence check, so PhishTank-labelled calibration is not an independent external validation of url.vet.",
+      "Binary labels support the suspicious benchmark directly; the four display levels are provisional operational bands derived from presumed-benign Q3, benchmark B, and suspicious Q1 rather than four independently labelled ground-truth classes.",
+      "The 60-record bounded sample is below the 200-record approval target.",
+      "Some url.vet analyses were partial or unavailable; usable numeric scores are retained, but full network-backed completion is reported separately.",
+      "The validation false-positive rate is 71.4% across 7 completed presumed-benign records; the safety-first policy over-warns and requires more representative calibration before approval."
+    ]
+  },
+  "validation_metrics": {
+    "sample_count": 20,
+    "presumed_benign_count": 10,
+    "suspicious_count": 10,
+    "completed_count": 16,
+    "incomplete_count": 4,
+    "confusion_matrix": {
+      "true_positive": 9,
+      "true_negative": 2,
+      "false_positive": 5,
+      "false_negative": 0
+    },
+    "precision": 0.6428571428571429,
+    "recall": 1.0,
+    "false_negative_rate": 0.0,
+    "false_positive_rate": 0.7142857142857143
+  },
+  "observation_count": 60,
+  "score_pair_count": 50,
+  "url_vet_status_counts": {
+    "complete": 7,
+    "partial": 43,
+    "unavailable": 10
+  },
+  "verdict_counts": {
+    "Not available": 10,
+    "Risky": 18,
+    "Safe": 12,
+    "Suspicious": 20
+  },
+  "threshold_evidence": {
+    "combined_score_rule": "max(risk_score, judgement_score)",
+    "low_medium_method": "T1 is the ceiling of the presumed-benign calibration third quartile Q3, capped below B. The upper quarter of presumed-benign scores is therefore not displayed as Low.",
+    "presumed_benign_distribution": {
+      "count": 14,
+      "minimum": 26.57,
+      "first_quartile": 39.085,
+      "median": 46.925,
+      "third_quartile": 61.44,
+      "maximum": 97.45
+    },
+    "presumed_benign_upper_quartile": 61.44,
+    "medium_high_method": "T2 equals the selected suspicious benchmark B, so High begins where the labelled calibration decision changes to suspicious.",
+    "high_dangerous_method": "T3 is the ceiling of the suspicious calibration first quartile, with Risky/Malicious verdict floors independently forcing Dangerous.",
+    "suspicious_distribution": {
+      "count": 20,
+      "minimum": 100.0,
+      "first_quartile": 100.0,
+      "median": 100.0,
+      "third_quartile": 100.0,
+      "maximum": 100.0
+    },
+    "agreement_margin_method": "D is the rounded first quartile of absolute risk/judgement score differences, with a minimum of 1. It is a strict empirical agreement tolerance, not a risk-level boundary.",
+    "absolute_score_difference_distribution": {
+      "count": 34,
+      "minimum": 0.0,
+      "first_quartile": 0.0,
+      "median": 21.125,
+      "third_quartile": 43.8925,
+      "maximum": 70.0
+    },
+    "adverse_verdicts": [
+      "Suspicious",
+      "Risky",
+      "Malicious"
+    ]
+  },
+  "methodology": [
+    "Use max(risk_score, judgement_score) for conservative benchmark evaluation so one high score cannot be averaged away; Suspicious, Risky, and Malicious verdicts are also adverse predictions.",
+    "Evaluate integer benchmark candidates B=1..99 on the calibration split; minimise false negatives, then maximise recall, then minimise false positives, then maximise distance to the nearest observed score.",
+    "Derive T1 from the presumed-benign score distribution, set T2=B, derive T3 from the suspicious score distribution, and derive D separately from observed two-score disagreement.",
+    "Freeze all selected values before evaluating the separate validation split.",
+    "Treat missing score pairs as incomplete rather than as zero or low-risk predictions; report partial url.vet analyses separately from score availability."
+  ],
+  "justification": "Selected B=79 after evaluating 99 candidates on 40 calibration records. T1=62 is the presumed-benign upper-quartile boundary, T2 equals B, T3=100 is the suspicious lower-quartile boundary, and D=1 is the strict empirical agreement tolerance. The resulting four levels are provisional because the labels are binary, the bounded sample is small, and url.vet completion limitations remain visible in this report."
+}

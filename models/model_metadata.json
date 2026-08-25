@@ -1,0 +1,23 @@
+{
+  "feature_order": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "query_length",
+    "digit_ratio",
+    "special_char_count",
+    "dot_count",
+    "hyphen_count",
+    "subdomain_count",
+    "url_entropy",
+    "has_ip_address",
+    "uses_https",
+    "has_at_symbol",
+    "suspicious_keyword_count",
+    "uses_shortener"
+  ],
+  "threshold": 0.5,
+  "model_name": "LogisticRegression",
+  "model_version": "url-risk-lr-2026.07.29",
+  "artifact_sha256": "01b4b477495c5c2c0f6d8d885c0991257c696bed517b534abbe99764e1407b91"
+}

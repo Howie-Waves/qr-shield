@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "report_version": "phase3-real-qr-report-v1",
+  "dataset_version": "phase3-real-suspicious-qr-v1",
+  "generated_at": "2026-08-19T13:17:26.010285Z",
+  "source_snapshot_sha256": "fff606a56ceb6e292065410965be53206ec2d98ed3b92522a536e82d7b19a3b4",
+  "source_evidence_generated_at": "2026-08-13T17:22:07.017752Z",
+  "analysis_versions": {
+    "url_vet": "urlvet-556c7aa3f5bb",
+    "local_judgement_model": "url-risk-lr-2026.07.29"
+  },
+  "decision_policy_version": "phase3-decision-policy-v1",
+  "selection_method": "Select every suspicious PhishTank record in the locked Phase 3 validation split whose frozen url.vet observation completed. Selection uses source and completion status only, not score, verdict, or final decision.",
+  "source_audit_mode": "locked_local_snapshot",
+  "ready_case_count": 3,
+  "pending_case_count": 1,
+  "metrics": {
+    "suspicious_case_count": 3,
+    "safe_reproduction_decode_success_count": 3,
+    "source_qr_decode_success_count": 3,
+    "detected_suspicious_count": 3,
+    "low_suspicion_count": 0,
+    "not_suspicious_count": 0,
+    "passed_case_count": 3,
+    "safety_pass_rate": 1.0,
+    "detection_rate": 1.0
+  },
+  "case_results": [
+    {
+      "sample_id": "phishtank-9206118-safe-reproduction",
+      "source_record_id": "9206118",
+      "target_category": "Internal Revenue Service",
+      "expected_label": "suspicious",
+      "evidence_subject": "original_source_payload",
+      "original_payload_sha256": "8d712b54cc01e13872d86aa5f1f932e4455d13f606e1cbe239215a450b978d5f",
+      "provenance_status": "matched",
+      "safe_reproduction_payload_sha256": "3b2f43553bfcb0a3d8601a3c79730e7e9b78857b61efca3bbd786160b2cc816b",
+      "safe_reproduction_decode_status": "passed",
+      "source_qr_decode_status": "passed",
+      "local_score_reproduced": true,
+      "risk_score": 100.0,
+      "judgement_score": 100.0,
+      "verdict": "Suspicious",
+      "url_vet_observation_status": "complete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "Dangerous",
+        "conclusion": "Suspicious",
+        "confidence_level": "High",
+        "confidence_reason": "Both scores agree above B=79, differ by no more than D=1, and are not close to the benchmark.",
+        "decision_reasons": [
+          "url.vet risk score 100 reached B=79.",
+          "Local judgement score 100 reached B=79.",
+          "The more cautious score-derived level is Dangerous.",
+          "url.vet verdict Suspicious sets a minimum level of High suspicion."
+        ],
+        "risk_score_level": "Dangerous",
+        "judgement_score_level": "Dangerous",
+        "risk_vote_suspicious": true,
+        "judgement_vote_suspicious": true,
+        "adverse_verdict": "Suspicious"
+      },
+      "forbidden_low_outcome": false,
+      "detection_pass": true,
+      "passed": true
+    },
+    {
+      "sample_id": "phishtank-9413269-safe-reproduction",
+      "source_record_id": "9413269",
+      "target_category": "Other",
+      "expected_label": "suspicious",
+      "evidence_subject": "original_source_payload",
+      "original_payload_sha256": "fe39fb348ea3c09dce480270ff6fafb0545b94dbc95820c78405cf6ea5c98ebc",
+      "provenance_status": "matched",
+      "safe_reproduction_payload_sha256": "32b0bb33daf35f36752aa45fc4d65d38c9a2669af9db2dcf1c75d30a307160ca",
+      "safe_reproduction_decode_status": "passed",
+      "source_qr_decode_status": "passed",
+      "local_score_reproduced": true,
+      "risk_score": 100.0,
+      "judgement_score": 100.0,
+      "verdict": "Risky",
+      "url_vet_observation_status": "complete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "Dangerous",
+        "conclusion": "Suspicious",
+        "confidence_level": "High",
+        "confidence_reason": "Both scores agree above B=79, differ by no more than D=1, and are not close to the benchmark.",
+        "decision_reasons": [
+          "url.vet risk score 100 reached B=79.",
+          "Local judgement score 100 reached B=79.",
+          "The more cautious score-derived level is Dangerous.",
+          "url.vet verdict Risky sets a minimum level of Dangerous."
+        ],
+        "risk_score_level": "Dangerous",
+        "judgement_score_level": "Dangerous",
+        "risk_vote_suspicious": true,
+        "judgement_vote_suspicious": true,
+        "adverse_verdict": "Risky"
+      },
+      "forbidden_low_outcome": false,
+      "detection_pass": true,
+      "passed": true
+    },
+    {
+      "sample_id": "phishtank-9245521-safe-reproduction",
+      "source_record_id": "9245521",
+      "target_category": "British Telecom",
+      "expected_label": "suspicious",
+      "evidence_subject": "original_source_payload",
+      "original_payload_sha256": "e285cf6595dcf56b827f4af62240fbcd84fe910a2a111ecde96b2ed4ddcdd37e",
+      "provenance_status": "matched",
+      "safe_reproduction_payload_sha256": "8cbc4b648a021fcf7be1a07026237f36e069d9fd78127871737038e1dda7a804",
+      "safe_reproduction_decode_status": "passed",
+      "source_qr_decode_status": "passed",
+      "local_score_reproduced": true,
+      "risk_score": 100.0,
+      "judgement_score": 99.93,
+      "verdict": "Risky",
+      "url_vet_observation_status": "complete",
+      "decision": {
+        "policy_version": "phase3-decision-policy-v1",
+        "policy_status": "provisional",
+        "benchmark": 79.0,
+        "agreement_margin": 1.0,
+        "thresholds": {
+          "low_medium": 62.0,
+          "medium_high": 79.0,
+          "high_dangerous": 100.0
+        },
+        "suspicion_level": "Dangerous",
+        "conclusion": "Suspicious",
+        "confidence_level": "High",
+        "confidence_reason": "Both scores agree above B=79, differ by no more than D=1, and are not close to the benchmark.",
+        "decision_reasons": [
+          "url.vet risk score 100 reached B=79.",
+          "Local judgement score 99.93 reached B=79.",
+          "The more cautious score-derived level is Dangerous.",
+          "url.vet verdict Risky sets a minimum level of Dangerous."
+        ],
+        "risk_score_level": "Dangerous",
+        "judgement_score_level": "High suspicion",
+        "risk_vote_suspicious": true,
+        "judgement_vote_suspicious": true,
+        "adverse_verdict": "Risky"
+      },
+      "forbidden_low_outcome": false,
+      "detection_pass": true,
+      "passed": true
+    }
+  ],
+  "pending_evidence": [
+    {
+      "status": "pending",
+      "sample_id": "supervisor-australia-fraud-qr",
+      "source_category": "supervisor_provided_incident",
+      "expected_label": "suspicious",
+      "expected_payload_behaviour": "A reported Australian fraud QR that may initiate or redirect toward an unauthorised payment.",
+      "source_received": false,
+      "pending_reason": "The supervisor offered to search a backup drive, but the sample has not yet been supplied to the project team.",
+      "review_owner": "QR Shield project team",
+      "redistribution_permission": "undetermined"
+    }
+  ],
+  "methodology": [
+    "Select all complete PhishTank suspicious records in the previously frozen validation split without consulting their scores or final decisions.",
+    "Verify the redacted manifest against the locked source manifest, sampled-record hashes, and frozen url.vet/local-model observations.",
+    "Generate each redacted .invalid safe reproduction in memory and decode it; when the ignored raw snapshot is available, render each original source URL to an in-memory QR and compare only its SHA-256 after decoding.",
+    "Apply the committed Phase 3 decision policy to the original source payload's frozen scores and verdict, never to invented fixture scores.",
+    "Fail a suspicious case if it becomes Low suspicion or Not suspicious; separately require a High/Dangerous suspicious conclusion for detection_pass."
+  ],
+  "limitations": [
+    "The three ready entries are safe QR payload reproductions generated only in memory, not QR images recovered from the original incidents.",
+    "The ready set contains all complete PhishTank observations in the existing validation split, so it is small and completion-biased.",
+    "PhishTank supplies the suspicious label and is also used by url.vet, so this is integration evidence rather than independent validation of url.vet.",
+    "The provider's verified and online fields describe the 2026-08-12 source snapshot and do not claim the destinations remain online.",
+    "The supervisor-provided Australian fraud QR remains pending until the original sample and redistribution decision are available."
+  ]
+}

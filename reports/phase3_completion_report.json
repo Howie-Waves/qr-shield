@@ -1,0 +1,228 @@
+{
+  "report_version": "phase3-completion-report-v1",
+  "generated_at": "2026-08-19T14:15:07.095175Z",
+  "policy_version": "phase3-decision-policy-v1",
+  "calibration_report_valid": true,
+  "e3_us1_evaluation_passed": true,
+  "real_suspicious_qr_evaluation_passed": true,
+  "non_url_boundary_tests_passed": true,
+  "logo_decoder_regression_passed": true,
+  "acceptance_checks": {
+    "calibration_report": true,
+    "e3_us1": true,
+    "real_suspicious_qr": true,
+    "non_url_boundary": true,
+    "logo_decoder": true,
+    "payment": true,
+    "tampering": true,
+    "robustness": true,
+    "url_vet_loopback_smoke": true
+  },
+  "phase3_acceptance_passed": true,
+  "calibration": {
+    "passed": true,
+    "policy_version": "phase3-decision-policy-v1",
+    "policy_status": "provisional",
+    "dataset_version": "phase3-labelled-url-calibration-v1",
+    "thresholds": {
+      "low_medium": 62.0,
+      "medium_high": 79.0,
+      "high_dangerous": 100.0
+    },
+    "benchmark": 79.0,
+    "agreement_margin": 1.0,
+    "observation_count": 60,
+    "score_pair_count": 50,
+    "selected_metrics": {
+      "sample_count": 40,
+      "presumed_benign_count": 20,
+      "suspicious_count": 20,
+      "completed_count": 34,
+      "incomplete_count": 6,
+      "confusion_matrix": {
+        "true_positive": 20,
+        "true_negative": 10,
+        "false_positive": 4,
+        "false_negative": 0
+      },
+      "precision": 0.8333333333333334,
+      "recall": 1.0,
+      "false_negative_rate": 0.0,
+      "false_positive_rate": 0.2857142857142857
+    },
+    "validation_metrics": {
+      "sample_count": 20,
+      "presumed_benign_count": 10,
+      "suspicious_count": 10,
+      "completed_count": 16,
+      "incomplete_count": 4,
+      "confusion_matrix": {
+        "true_positive": 9,
+        "true_negative": 2,
+        "false_positive": 5,
+        "false_negative": 0
+      },
+      "precision": 0.6428571428571429,
+      "recall": 1.0,
+      "false_negative_rate": 0.0,
+      "false_positive_rate": 0.7142857142857143
+    }
+  },
+  "e3_us1_evaluation": {
+    "passed": true,
+    "dataset_version": "1.1",
+    "scenario_count": 6,
+    "passed_scenarios": 6,
+    "latency_ms": {
+      "p50": 393.12,
+      "p95": 873.73
+    }
+  },
+  "real_suspicious_qr_evaluation": {
+    "passed": true,
+    "dataset_version": "phase3-real-suspicious-qr-v1",
+    "source_audit_mode": "locked_local_snapshot",
+    "ready_case_count": 3,
+    "pending_case_count": 1,
+    "metrics": {
+      "suspicious_case_count": 3,
+      "safe_reproduction_decode_success_count": 3,
+      "source_qr_decode_success_count": 3,
+      "detected_suspicious_count": 3,
+      "low_suspicion_count": 0,
+      "not_suspicious_count": 0,
+      "passed_case_count": 3,
+      "safety_pass_rate": 1.0,
+      "detection_rate": 1.0
+    }
+  },
+  "non_url_boundary_tests": {
+    "passed": true,
+    "cases": {
+      "plain_text": {
+        "passed": true,
+        "status_code": 200,
+        "content_type": "text",
+        "analysis_status": "Not scored",
+        "decision_conclusion": "Not applicable",
+        "url_vet_status": "not_applicable",
+        "url_vet_called": false,
+        "local_model_called": false
+      },
+      "payment": {
+        "passed": true,
+        "status_code": 200,
+        "content_type": "payment",
+        "analysis_status": "Not scored",
+        "decision_conclusion": "Not applicable",
+        "url_vet_status": "not_applicable",
+        "url_vet_called": false,
+        "local_model_called": false
+      },
+      "wifi": {
+        "passed": true,
+        "status_code": 200,
+        "content_type": "text",
+        "analysis_status": "Not scored",
+        "decision_conclusion": "Not applicable",
+        "url_vet_status": "not_applicable",
+        "url_vet_called": false,
+        "local_model_called": false
+      },
+      "vcard": {
+        "passed": true,
+        "status_code": 200,
+        "content_type": "text",
+        "analysis_status": "Not scored",
+        "decision_conclusion": "Not applicable",
+        "url_vet_status": "not_applicable",
+        "url_vet_called": false,
+        "local_model_called": false
+      },
+      "unsupported_uri": {
+        "passed": true,
+        "status_code": 200,
+        "content_type": "text",
+        "analysis_status": "Not scored",
+        "decision_conclusion": "Not applicable",
+        "url_vet_status": "not_applicable",
+        "url_vet_called": false,
+        "local_model_called": false
+      },
+      "malformed_http": {
+        "passed": true,
+        "status_code": 200,
+        "content_type": "url",
+        "analysis_status": "Not scored",
+        "decision_conclusion": "Not applicable",
+        "url_vet_status": "not_applicable",
+        "url_vet_called": false,
+        "local_model_called": false
+      }
+    }
+  },
+  "logo_decoder_regression": {
+    "passed": true,
+    "fixture": "logo.jpg",
+    "content_type": "url",
+    "decode_status": "passed"
+  },
+  "payment_regression": {
+    "passed": true,
+    "valid_case_status": "passed",
+    "mismatch_case_status": "failed"
+  },
+  "tampering_regression": {
+    "passed": true,
+    "dataset_version": "1.0",
+    "fixture_count": 13,
+    "false_negative": 0,
+    "false_positive_rate": 0.0
+  },
+  "robustness_regression": {
+    "passed": true,
+    "dataset_version": "1.0",
+    "image_count": 57,
+    "decodable_count": 56,
+    "pipeline": {
+      "correct": 50,
+      "miss": 7,
+      "wrong": 0,
+      "n": 57,
+      "correct_rate": 0.8929
+    },
+    "criteria": {
+      "pipeline_ge_best_single": true,
+      "pipeline_meets_target": true,
+      "zero_wrong_pipeline": true,
+      "non_decodable_rejected": true,
+      "target_rate": 0.85
+    }
+  },
+  "url_vet_loopback_smoke": {
+    "required": true,
+    "service_reachable": true,
+    "health_response_shape_valid": true,
+    "analysis_endpoint_controlled_response": true,
+    "incomplete_responses_are_not_promoted": true,
+    "passed": true
+  },
+  "full_unittest": {
+    "status": "failed",
+    "effective_passed": true,
+    "test_count": 165,
+    "failure_names": [
+      "test_retention_cleanup_removes_expired_pending_cases (test_review_store.E3US2ReviewStoreTests)"
+    ],
+    "known_unrelated_failure": "Windows SQLite temporary-directory file-lock failure in the existing review-store retention test."
+  },
+  "limitations": [
+    "The Phase 3 policy remains provisional because the labelled sample is bounded and below the approval target.",
+    "The calibration labels are binary and the four display bands are operational bands, not four independently labelled classes.",
+    "The three ready suspicious QR entries are safe in-memory reproductions, not recovered incident images.",
+    "PhishTank supplies the suspicious labels and is also used by url.vet, so this is integration evidence rather than independent validation.",
+    "The supervisor Australian fraud QR remains pending until the original sample and redistribution decision are available."
+  ],
+  "completion_status": "passed_with_known_unrelated_test_failure",
+  "overall_passed": true
+}

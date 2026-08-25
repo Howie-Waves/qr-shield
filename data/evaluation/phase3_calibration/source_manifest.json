@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "dataset_name": "QR Shield Phase 3 threshold-calibration sources",
+  "dataset_version": "phase3-calibration-sources-v1",
+  "description": "Locked provenance and integrity metadata for the raw sources used to build a labelled URL calibration set. This manifest contains no sampled URLs.",
+  "raw_data_committed": false,
+  "contains_potentially_live_urls": true,
+  "sources": [
+    {
+      "source_id": "tranco_top_1m",
+      "source_name": "Tranco top one million domains",
+      "provider": "Tranco",
+      "landing_page": "https://tranco-list.eu/",
+      "source_version": "not_recorded; input locked by SHA-256",
+      "label": "presumed_benign",
+      "label_definition": "Ranked popular domains used as presumed-benign calibration candidates. Ranking is not proof that every domain is safe.",
+      "retrieved_at": "2026-08-11",
+      "retrieval_date_basis": "Local file last-write date of the project-owner-supplied download.",
+      "raw_path": "data/raw/phase3_calibration/benign/tranco_top_1m.csv",
+      "raw_format": "csv",
+      "has_header": false,
+      "columns": [
+        "rank",
+        "domain"
+      ],
+      "record_count": 1000000,
+      "file_size_bytes": 22677353,
+      "sha256": "feab56e5b4f48e3c1393916d74226d1d6234416c621390be29bb72199caf18d7",
+      "observed_properties": {
+        "first_rank": 1,
+        "last_rank": 1000000,
+        "invalid_or_empty_rows": 0,
+        "rank_sequence_contiguous": true
+      }
+    },
+    {
+      "source_id": "phishtank_online_valid",
+      "source_name": "PhishTank verified online phishing feed",
+      "provider": "PhishTank",
+      "landing_page": "https://phishtank.org/developer_info.php",
+      "source_version": "retrieval snapshot locked by SHA-256",
+      "label": "suspicious",
+      "label_definition": "Provider-verified phishing URLs reported as online at retrieval time.",
+      "retrieved_at": "2026-08-12",
+      "retrieval_date_basis": "Local file last-write date of the project-owner-supplied download.",
+      "raw_path": "data/raw/phase3_calibration/suspicious/phishtank_online_valid.csv",
+      "raw_format": "csv",
+      "has_header": true,
+      "columns": [
+        "phish_id",
+        "url",
+        "phish_detail_url",
+        "submission_time",
+        "verified",
+        "verification_time",
+        "online",
+        "target"
+      ],
+      "record_count": 71464,
+      "file_size_bytes": 13703627,
+      "sha256": "fff606a56ceb6e292065410965be53206ec2d98ed3b92522a536e82d7b19a3b4",
+      "observed_properties": {
+        "verified_yes_count": 71464,
+        "online_yes_count": 71464,
+        "blank_url_count": 0,
+        "all_records_verified_and_online": true
+      }
+    }
+  ]
+}
